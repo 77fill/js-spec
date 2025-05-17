@@ -1,10 +1,15 @@
-import {sdef, isNumber, isString} from "../lib/main.js";
+import {sdef, isNumber, isString, notNaN, isNegative, isInteger} from "../lib/main.js";
 import {isValid} from "../lib/isValid.js";
 import {describe, it, expect} from "vitest";
+import {and, not} from "../lib/spec.js";
+
+const basic = sdef({
+    "basic/word": and(isString, /[a-zA-Zäöüß]+/.test)
+})
 
 const domain = sdef({
-    "domain/name": isString,
-    "domain/age": isNumber,
+    "domain/firstname": basic["basic/word"],
+    "domain/age": and(isInteger, notNaN, not(isNegative)),
 })
 
 describe("simple examples", () => {
