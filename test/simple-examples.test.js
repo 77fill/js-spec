@@ -12,16 +12,21 @@ const basic = $def("basic",{
 const domain = $def("domain",{
     "firstname": basic.word,
     "age": $and(isInteger, notNaN, $not(isNegative)),
+    "address": [isString, isString],
+    "type": ["employer", "employee"].includes
 })
 
 // Behavior:
 
 describe("simple examples", () => {
     it("should greenlight all datastructures of all types", () => {
-        expect(isValid({
+        const person = {
             [domain.firstname]: "Philipp",
             "domain/age": 28,
-        }))
-            .to.be.true
+            [domain.address]: ["Andreastraße 33", "12345 Blobugen"],
+            "domain/type": "employer",
+        }
+
+        expect(isValid(person)).to.be.true
     })
 })
