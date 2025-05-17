@@ -1,7 +1,5 @@
-import {$def, isNumber, isString, notNaN, isNegative, isInteger} from "../lib/main.js";
-import {isValid} from "../lib/isValid.js";
+import {$def, isNumber, isString, notNaN, isNegative, isInteger, $valid, $and, $not} from "../lib/main";
 import {describe, it, expect} from "vitest";
-import {$and, $not} from "../lib/spec.js";
 
 // Specs:
 
@@ -27,6 +25,6 @@ describe("simple examples", () => {
             "domain/type": "employer",
         }
 
-        expect(isValid(person)).to.be.true
+        expect($valid(person)).to.be.true
     })
 })
