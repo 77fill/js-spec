@@ -1,15 +1,15 @@
-import {sdef, isNumber, isString, notNaN, isNegative, isInteger} from "../lib/main.js";
+import {$def, isNumber, isString, notNaN, isNegative, isInteger} from "../lib/main.js";
 import {isValid} from "../lib/isValid.js";
 import {describe, it, expect} from "vitest";
-import {and, not} from "../lib/spec.js";
+import {$and, $not} from "../lib/spec.js";
 
-const basic = sdef({
-    "basic/word": and(isString, /[a-zA-Zäöüß]+/.test)
+const basic = $def({
+    "basic/word": $and(isString, /[a-zA-Zäöüß]+/.test)
 })
 
-const domain = sdef({
+const domain = $def({
     "domain/firstname": basic["basic/word"],
-    "domain/age": and(isInteger, notNaN, not(isNegative)),
+    "domain/age": $and(isInteger, notNaN, $not(isNegative)),
 })
 
 describe("simple examples", () => {
