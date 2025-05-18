@@ -1,23 +1,11 @@
-import {$def, isNumber, isString, notNaN, isNegative, isInteger, $valid, $and, $not} from "../lib/main";
-import {describe, it, expect} from "vitest";
-
-// Specs:
-
-const basic = $def("basic",{
-    "word": $and(isString, /[a-zA-Zäöüß]+/.test)
-})
-
-const domain = $def("domain",{
-    "firstname": basic.word,
-    "age": $and(isInteger, notNaN, $not(isNegative)),
-    "address": [isString, isString],
-    "type": ["employer", "employee"].includes
-})
+import {$valid} from "../lib/main";
+import {describe, expect, it} from "vitest";
+import {domain} from "./tested-specs.js";
 
 // Behavior:
 
-describe("simple examples", () => {
-    it("should greenlight all datastructures of all types", () => {
+describe("validate - shallow structures", () => {
+    it("tests valid data", () => {
         const person = {
             [domain.firstname]: "Philipp",
             "domain/age": 28,
