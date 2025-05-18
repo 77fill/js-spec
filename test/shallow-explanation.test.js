@@ -1,9 +1,9 @@
 import {describe} from "vitest";
-import {domain} from "./tested-specs.js";
+import {domain, game} from "./tested-specs.js";
 import {$explain} from "../lib/main.js";
 
-describe("explain - shallow structures", () => {
-    it("tests invalid data", () => {
+describe("explain - shallow invalid structures", () => {
+    it("tests by logic e.g. and,or", () => {
         expect($explain(domain.age, "no-age-here")).to.equal([
             {
                 invalidValue: "no-age-here",
