@@ -8,5 +8,14 @@ export const domain = $def("domain",{
     "firstname": basic.word,
     "age": $and(isInteger, notNaN, $not(isNegative)),
     "address": [isString, isString],
-    "type": ["employer", "employee"].includes
+    "type": ["employer", "employee"].includes,
+    "person": $map("domain/firstname", "domain/age", "domain/type"),
+})
+
+//TODO resolving dependencies among spec'ed keys?
+export const game = $def("game", {
+    "points": isInteger,
+    "difficulty": isString,
+    "status": $map("game/points", "game/difficulty"),
+    "victory": $tuple("domain/person", "game/status"),
 })
