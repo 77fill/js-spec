@@ -1,5 +1,6 @@
 import {describe} from "vitest";
 import {domain} from "./tested-specs.js";
+import {$explain} from "../lib/main.js";
 
 describe("explain - shallow structures", () => {
     it("tests invalid data", () => {
