@@ -20,8 +20,9 @@ NO specifications for these
 ## Dependencies
 *-> means 'depends on'*
 
-core-private, define, use -> util \
-define, use -> core-private 
+use, define, core-private -> util \
+use, define -> core-private \
+use -> define
 
 ## Meaning
 ### core-private

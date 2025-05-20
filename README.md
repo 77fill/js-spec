@@ -1,9 +1,9 @@
 # js-spec
 ## Motivation
 Inspired by [clojure.spec](https://clojure.org/guides/spec),
-this javascript library aims to spec data structures and values
-in order to validate, conform, explain, document, 
-destructure/parse and test them.
+this javascript library aims to 'spec' data and use these 
+specs in various ways (see [Progress/Usage](#Usage)).
+
 
 ## Progress
 ### Types
@@ -13,11 +13,12 @@ destructure/parse and test them.
 - [ ] function
 - [ ] regex
 ### Usage
+- [ ] validate
 - [ ] explain
 - [ ] conform
-- [ ] validate
-- [ ] document
 - [ ] destructure/parse
+- [ ] document
+- [ ] instrument
 
 ## Tech Stack
 - Javascript
