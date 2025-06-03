@@ -3,6 +3,8 @@ import $def from "../../lib/define/keys-that-are-spec_ed";
 import { expect } from "chai";
 import { isInteger, isString } from "../../lib/util/predicates";
 
+const spec = this_is_a_mock => true
+
 describe("valid expressions", () => {
     it("creates namespaces", () => {
         expect(() => {
@@ -18,10 +20,10 @@ describe("valid expressions", () => {
     it("registers key names", () => {
         expect(() => {
             $def("namespace_name", {
-                "key_name": isString,
-                "alpha-_123": isString,
-                "firstname": val => typeof val === "string",
-                "age": val => typeof val === "number",
+                "key_name": spec,
+                "alpha-_123": spec,
+                "firstname": spec,
+                "age": spec,
             })
         })
         .to.not.throw()
@@ -44,14 +46,14 @@ describe("invalid expressions", () => {
 
     it("fails at registering key names", () => {
         expect(() => 
-            $def("domain", {"hierarchy/test": isString})    ).to.throw()
+            $def("domain", {"hierarchy/test": spec})    ).to.throw()
         expect(() => 
-            $def("domain", {"age+*": isString})             ).to.throw()
+            $def("domain", {"age+*": spec})             ).to.throw()
         expect(() => 
-            $def("domain", {"/height": isInteger})          ).to.throw()
+            $def("domain", {"/height": spec})           ).to.throw()
         expect(() => 
-            $def("domain", {"hierarchy/": isString})        ).to.throw()
+            $def("domain", {"hierarchy/": spec})        ).to.throw()
         expect(() => 
-            $def("domain", {"": isString})                  ).to.throw()
+            $def("domain", {"": spec})                  ).to.throw()
     })
 })
