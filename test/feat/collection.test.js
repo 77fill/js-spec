@@ -1,6 +1,5 @@
 import { describe, it } from "vitest";
-import { $coll } from "../../lib/define/spec-by-membership";
-import { isInteger, isString } from "../../lib/util/predicates";
+import { $coll, isInteger, isString } from "../../lib/main"
 import { expect } from "chai";
 
 

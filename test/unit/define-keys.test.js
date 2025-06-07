@@ -1,7 +1,6 @@
 import { describe, it } from "vitest";
-import $def from "../../lib/define/keys-that-are-spec_ed";
+import {$def} from "../../lib/main";
 import { expect } from "chai";
-import { isInteger, isString } from "../../lib/util/predicates";
 
 const spec = this_is_a_mock => true
 

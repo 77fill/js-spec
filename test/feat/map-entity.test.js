@@ -1,7 +1,5 @@
 import { beforeAll, describe, it } from "vitest";
-import $def from "../../lib/define/keys-that-are-spec_ed";
-import { isInteger, isString } from "../../lib/util/predicates";
-import { $map } from "../../lib/define/spec-by-membership";
+import { $def, isInteger, isString, $map } from "../../lib/main"
 import { expect } from "chai";
 
 describe("an entity map", () => {
