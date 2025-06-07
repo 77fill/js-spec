@@ -1,23 +1,28 @@
 import { beforeAll, describe, it } from "vitest";
-import { $def, isInteger, isString, $map } from "../../lib/main"
+import { $def, isInteger, isString, $map, $valid } from "../../lib/main"
 import { expect } from "chai";
+import registry from "../../lib/core-private/registry";
 
 describe("an entity map", () => {
-    const person = 
+    let person = 
         $def("person", {
             firstname: isString,
             lastname: isString,
             age: isInteger,
             city: isString,
-            customer: $map("person/firstname", "person/lastname", "person/age", "person/city"),
+           
         })
+
+    person = {...person, ...$def("person", {
+        customer: $map("person/firstname", "person/lastname", "person/age", "person/city"),
+    })}
 
     const living_being = 
         $def("living_being", {
             appendage: isString,
         })
 
-    const customer_valid = person.customer.valid.bind(person.customer)
+    const customer_valid = registry.get(person.customer).valid.bind(registry.get(person.customer))
 
     it("defines a valid customer", () => {
         expect({
