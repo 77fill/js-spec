@@ -17,6 +17,8 @@ describe("an entity map", () => {
             appendage: isString,
         })
 
+    const customer_valid = person.customer.valid.bind(person.customer)
+
     it("defines a valid customer", () => {
         expect({
             [person.firstname]: "Philipp",
@@ -24,7 +26,7 @@ describe("an entity map", () => {
             [person.age]: 666,
             [person.city]: "ZCity"
         })
-        .to.satisfy(person.customer.valid)
+        .to.satisfy(customer_valid)
     })
 
     it("defines a valid customer with extras", () => {
@@ -35,7 +37,7 @@ describe("an entity map", () => {
             [person.city]: "ZCity",
             [living_being.appendage]: "tentacles"
         })
-        .to.satisfy(person.customer.valid)
+        .to.satisfy(customer_valid)
     })
 
     it("defines an incomplete customer", () => {
@@ -44,6 +46,6 @@ describe("an entity map", () => {
             [person.lastname]: "Schmalz",
             [person.age]: 666,
         })
-        .to.not.satisfy(person.customer.valid)
+        .to.not.satisfy(customer_valid)
     })
 })

@@ -13,7 +13,7 @@ describe("values spec'ed by specs joined via an operator", () => {
         }),
         amount: $or(
             isInteger, 
-            "unknown", 
+            val => val === "unknown", 
             $and({
                 isArray,
                 firstIsNumber: arr => isNumber(arr[0]),

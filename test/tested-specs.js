@@ -1,4 +1,4 @@
-import {$and, $def, $not, isInteger, isNegative, isString, notNaN} from "../lib/main.js";
+import {$map, $and, $def, $not, isInteger, isNegative, isString, notNaN} from "../lib/main.js";
 
 export const basic = $def("basic",{
     "word": $and(isString, /[a-zA-Zäöüß]+/.test)
