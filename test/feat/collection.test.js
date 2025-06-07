@@ -12,7 +12,7 @@ describe("a collection of numbers", () => {
 
     it("defines valid collections", () => {
         expect(
-            new Set(1, 2, 3, 4)
+            new Set([1, 2, 3, 4])
         )
         .to.satisfy(numbers.valid)
 
@@ -29,12 +29,12 @@ describe("a collection of numbers", () => {
         .to.not.satisfy(numbers.valid)
 
         expect(
-            new Set(1,2,3,4,5,6,7,8,9,10,11)
+            new Set([1,2,3,4,5,6,7,8,9,10,11])
         )
         .to.not.satisfy(numbers,valid)
 
         expect(
-            new Set(1,1)
+            new Set([1,1])
         )
         .to.not.satisfy(numbers.valid)
     })
@@ -55,7 +55,7 @@ describe("a collection of distinct strings with an even amount > 0", () => {
         .to.satisfy(strings.valid)
 
         expect(
-            new Set("this", "too", "too")
+            new Set(["this", "too", "too"])
         )
         .to.satisfy(strings.valid)
 
