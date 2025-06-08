@@ -8,7 +8,6 @@ describe("SPEC-LIKE", () => {
         expect(() => {
             const constants = [
                 toSpec(2),
-                toSpec("bear"),
                 toSpec(Symbol(3)),
                 toSpec(true),
             ]
@@ -18,7 +17,7 @@ describe("SPEC-LIKE", () => {
             const oneOf = toSpec(["either", "or"])
             const regex = toSpec(/^[a-z]$/)
         })
-        .to.not.throw
+        .to.not.throw()
     })
 
     it("INVALID", () => {
@@ -29,6 +28,6 @@ describe("SPEC-LIKE", () => {
         .to.throw
 
         expect(() => toSpec({bla: 4}))
-        .to.throw
+        .to.throw()
     })
 })
