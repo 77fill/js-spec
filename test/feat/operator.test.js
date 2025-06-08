@@ -7,9 +7,9 @@ describe("values spec'ed by specs joined via an operator", () => {
     const domain = $def("domain", {
         firstname: $and({
             string: isString, 
-            noWhiteSpace: /^[^\s]*$/.test, 
-            onlyAlphabet: /^[a-zA-Z]*$/.test,
-            upperThenLowerCase: /^[A-Z][a-z]*$/.test
+            noWhiteSpace: str => /^[^\s]*$/.test(str), 
+            onlyAlphabet: str => /^[a-zA-Z]*$/.test(str),
+            upperThenLowerCase: str => /^[A-Z][a-z]*$/.test(str)
         }),
         amount: $or(
             isInteger, 
