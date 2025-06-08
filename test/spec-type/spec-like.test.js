@@ -16,6 +16,7 @@ describe("SPEC-LIKE", () => {
             const predicate = toSpec(val => val % 4 === 1)
             const properSpec = toSpec($tuple(1,2))
             const oneOf = toSpec(["either", "or"])
+            const regex = toSpec(/^[a-z]$/)
         })
         .to.not.throw
     })
