@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { describe } from "vitest";
+import { describe, it } from "vitest";
 import toSpec from "../../lib/core-private/spec-like";
 import { $tuple } from "../../lib/main";
 
