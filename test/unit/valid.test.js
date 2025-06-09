@@ -1,5 +1,6 @@
-import { expect, describe, it } from "chai"
+import { expect } from "chai"
 import { $def, $valid, isArray, isInteger, isString } from "../../lib/main"
+import { describe, it } from "vitest"
 
 $def("domain", {
     firstname: isString
