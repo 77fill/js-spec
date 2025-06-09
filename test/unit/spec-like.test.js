@@ -3,6 +3,8 @@ import { describe, it } from "vitest";
 import toSpec from "../../lib/core-private/spec-like";
 import { $tuple } from "../../lib/main";
 
+class Person {}
+
 describe("SPEC-LIKE", () => {
     it("VALID", () => {
         expect(() => {
@@ -16,6 +18,7 @@ describe("SPEC-LIKE", () => {
             const properSpec = toSpec($tuple(1,2))
             const oneOf = toSpec(["either", "or"])
             const regex = toSpec(/^[a-z]$/)
+            const instanceOf = toSpec(Person)
         })
         .to.not.throw()
     })
