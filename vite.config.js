@@ -1,4 +1,4 @@
-import path from 'path'
+import path, { resolve } from 'path'
 import {defineConfig} from 'vite'
 
 export default defineConfig({
@@ -7,6 +7,11 @@ export default defineConfig({
             entry: path.resolve(__dirname, 'lib/main.js'),
             name: 'js-spec',
             fileName: (format, entryName) => `${entryName}.${format}.js`
+        }
+    },
+    resolve: {
+        alias: {
+            "@": resolve(__dirname, '.')
         }
     }
 });
