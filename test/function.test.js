@@ -31,9 +31,9 @@ const jerry = new Person(10, 10)
 
 describe("FUNCTION", () => {
     it("VALID", () => {
-        const root = {domain:{actions:{}}}
-
-        root.domain.actions.attack = 
+        globalThis.domain = {actions:{}}
+        
+        globalThis.domain.actions.attack = 
             (source, target) => {
                         if(source.energy >= 2)
                             return Math.min(2, target.health)
@@ -41,10 +41,10 @@ describe("FUNCTION", () => {
                             return source.energy
                     }
 
-        $instrument(root)
+        $instrument()
 
         expect(
-            root.domain.actions.attack(tom, jerry)
+            globalThis.domain.actions.attack(tom, jerry)
         )
         .to.not.throw()
     })
