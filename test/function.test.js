@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import { $and, areDistinct, isInteger } from "../lib/main";
+import { $fn, $cat, $instrument, $and, areDistinct, isInteger } from "../lib/main";
 import { expect } from "chai";
 
 class Person {
