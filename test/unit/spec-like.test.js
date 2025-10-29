@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, it } from "vitest";
-import toSpec from "../../lib/core-private/spec-like";
+import toSpec from "@/lib/core/spec-like";
 import { $tuple } from "../../lib/main";
 
 class Person {}
