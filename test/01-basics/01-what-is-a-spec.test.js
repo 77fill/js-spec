@@ -29,7 +29,7 @@ describe('What is a spec?', () => {
             const fixedSymbol = Symbol("unique")
             const fixedBoolean = true
 
-            // Strings have a special purpose instead!
+            // No Strings! They have a special purpose instead!
 
             expect(42)                          .to.satisfy(reify(fixedNumber))
             expect(fixedSymbol)                     .to.satisfy(reify(fixedSymbol))
