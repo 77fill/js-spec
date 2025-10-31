@@ -5,7 +5,8 @@ import {$def, isString} from "@/lib/main.js";
 
 describe('What is a spec?', () => {
     describe(`
-            it comes from an -idea- which is "reified" into a spec
+            it comes from an -idea- which is "reified" into a spec  (basic)
+            it also comes from a specialized function like $map     (advanced)
             
             it is a specification of the type and structure of data
             
