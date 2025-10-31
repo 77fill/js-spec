@@ -10,7 +10,7 @@ describe("MAP", () => {
             [person.age]: 666,
             [person.city]: "ZCity"
         })
-            .to.satisfy(obj => customer.valid(obj))
+            .to.satisfy(customer)
 
         expect({
             [person.firstname]: "Philipp",
@@ -19,7 +19,7 @@ describe("MAP", () => {
             [person.city]: "ZCity",
             [living_being.appendage]: "tentacles"
         })
-            .to.satisfy(obj => customer.valid(obj))
+            .to.satisfy(customer)
     })
 
     it("INVALID", () => {
@@ -28,6 +28,6 @@ describe("MAP", () => {
             [person.lastname]: "Schmalz",
             [person.age]: 666,
         })
-            .to.not.satisfy(obj => customer.valid(obj))
+            .to.not.satisfy(customer)
     })
 })
