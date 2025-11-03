@@ -1,5 +1,6 @@
-import {describe} from "vitest";
+import {describe, test} from "vitest";
 import {bool_num_zero, num_num_str} from "@/test/03-define-specs-and-use-them/tuple/_definitions.js";
+import {expect} from "chai";
 
 describe("TUPLE", () => {
     test("VALID", () => {
