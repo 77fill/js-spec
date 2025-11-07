@@ -1,5 +1,5 @@
 import {describe, test} from "vitest";
-import {$def, $map} from "@/lib/main.js";
+import {$def, $map, isString} from "@/lib/main.js";
 import {expect} from "chai";
 
 describe("the all-important namespaced keys", () => {
@@ -17,15 +17,12 @@ describe("the all-important namespaced keys", () => {
             "person/lastname": "Mayer",
         }
 
-        const mapSpec = $map("person/firstname", "person/lastname")
-
-        /**
-         * This could be specified somewhere else, it's separate
-         */
         const personNamespace = $def("person", {
-            firstname: String,
-            lastname: String,
+            firstname: isString,
+            lastname: isString,
         })
+
+        const mapSpec = $map("person/firstname", "person/lastname")
 
         expect(aMapEntity).to.satisfy(mapSpec)
     })
