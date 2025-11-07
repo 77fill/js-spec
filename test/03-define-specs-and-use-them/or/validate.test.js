@@ -5,6 +5,7 @@ import {expect} from "chai";
 describe("OR", () => {
     it("VALID", () => {
         expect(-5).to.satisfy(or_negative_5_7)
+        console.log(JSON.stringify( or_negative_5_7.analyse(5) ))
         expect(5).to.satisfy(or_negative_5_7)
         expect(7).to.satisfy(or_negative_5_7)
     })
