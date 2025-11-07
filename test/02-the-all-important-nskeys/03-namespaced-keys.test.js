@@ -3,6 +3,8 @@ import {$def} from "@/lib/main.js";
 import {expect} from "chai";
 
 describe("the all-important namespaced keys", () => {
+    const spec = val => val === "42"
+
     it("registers key names", () => {
         expect(() => {
             $def("namespace_name", {
