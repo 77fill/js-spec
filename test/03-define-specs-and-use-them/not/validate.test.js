@@ -10,6 +10,8 @@ describe("NOT", () => {
     })
 
     it("INVALID", () => {
+        console.log(not_string.analyse("42"))
+
         expect("42").to.not.satisfy(not_string)
         expect(0).to.not.satisfy(not_zero)
     })
