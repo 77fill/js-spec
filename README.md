@@ -1,24 +1,17 @@
 # js-spec
 ## Motivation
 Inspired by [clojure.spec](https://clojure.org/guides/spec),
-this javascript library aims to 'spec' data and use these 
-specs in various ways (see [Progress/Usage](#Usage)).
-
+this javascript library aims to 'spec' data and use these \
+specs in various ways: validation, explanation, conformation, parsing/destructuring, instrumentation.
 
 ## Progress
-### Types
-- [ ] and, or, not
-- [ ] coll, array
-- [ ] map
-- [ ] function
-- [ ] regex
-### Usage
-- [ ] validate
-- [ ] explain
-- [ ] conform
-- [ ] destructure/parse
-- [ ] document
-- [ ] instrument
+
+| USAGE    | and | or | not | coll | map | tuple | seq | function |
+|:---------|:---:|:--:|:---:|:----:|:---:|:-----:|:---:|:--------:|
+| validate |  x  | x  |  x  |  x   |  x  |   x   |     |          |
+| explain  |     |    |     |      |     |       |     |          |
+| conform  |     |    |     |      |     |       |     |          |
+
 
 ## Tech Stack
 - Javascript
